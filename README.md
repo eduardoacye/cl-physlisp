@@ -1,4 +1,4 @@
-# Programando con física
+# Programando física con lisp
 
 Este repositorio contiene el código de la biblioteca `cl-physlisp`. El objetivo del proyecto es incorporar en Common Lisp la capacidad expresar dimensiones, unidades y cantidades físicas.
 
