@@ -5,7 +5,6 @@
 ;; packages.lisp
 
 (defpackage #:cl-physlisp
-  (:shadow :+ :- :* :/)
   (:use #:cl))
 
 

@@ -2,9 +2,17 @@
 
 ;; 2016 - Eduardo Acuña Yeomans
 
-;; generic-arithmetic.lisp
+;; special.lisp
 
 (in-package #:cl-physlisp)
+
+(defparameter *dimension-rank* 0)
+(defparameter *code->dimension* nil)
+(defparameter *form->dimension* nil)
+(defparameter *name->dimension* nil)
+(defparameter *basic-dimensions* nil)
+;(defparameter *dimensionless* nil)
+(intern "^" :cl-physlisp)
 
 
 ;; LICENSE:

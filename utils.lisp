@@ -2,18 +2,30 @@
 
 ;; 2016 - Eduardo Acuña Yeomans
 
-;; cl-physlisp.asd
+;; utils.lisp
 
-(asdf:defsystem #:cl-physlisp
-  :description "Física en lisp"
-  :author "Eduardo Acuña Yeomans <eduardo.acye@gmail.com>"
-  :license "GPLv3"
-  :components ((:file "packages")
-               (:file "special"            :depends-on ("packages"))
-               (:file "utils"              :depends-on ("special" "packages"))
-               (:file "macros"             :depends-on ("packages"))
-               (:file "dimensions"         :depends-on ("macros"))
-               (:file "cl-physlisp"        :depends-on ("dimensions"))))
+(in-package #:cl-physlisp)
+
+(defun make-dimension-code ()
+  (make-array *dimension-rank* :element-type 'fixnum :initial-element 0))
+
+(defun show-registry (table)
+  (loop for key being the hash-keys of table using (hash-value value)
+	do (format t "~%KEY ~a~%NAME ~s~%FORM ~s~%CODE ~s~%"
+		   key
+		   (if (slot-boundp value 'name) (name value) "unnamed")
+		   (if (slot-boundp value 'form) (form value) "unformed")
+		   (if (slot-boundp value 'code) (code value) "uncoded"))))
+
+(defun show-code->dimension ()
+  (show-registry *code->dimension*))
+
+(defun show-name->dimension ()
+  (show-registry *name->dimension*))
+
+(defun show-form->dimension ()
+  (show-registry *form->dimension*))
+
 
 
 ;; LICENSE:
