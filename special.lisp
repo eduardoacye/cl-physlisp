@@ -11,7 +11,6 @@
 (defparameter *form->dimension* nil)
 (defparameter *name->dimension* nil)
 (defparameter *basic-dimensions* nil)
-;(defparameter *dimensionless* nil)
 (intern "^" :cl-physlisp)
 
 
